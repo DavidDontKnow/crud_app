@@ -25,6 +25,10 @@ class _HomePageState extends State<HomePage> {
               actions: [
                 //button to save the note
                 ElevatedButton(
+                    // set color to blue
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue[900],
+                        foregroundColor: Colors.white),
                     onPressed: () {
                       //add new note
                       if (docID == null) {
@@ -39,7 +43,20 @@ class _HomePageState extends State<HomePage> {
                       //close the dialog
                       Navigator.of(context).pop();
                     },
-                    child: const Text('Add'))
+                    child: const Text('Add')),
+                //button to cancel the note
+                ElevatedButton(
+                    // set color to red
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        foregroundColor: Colors.white),
+                    onPressed: () {
+                      //clear the text field
+                      textController.clear();
+                      //close the dialog
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Cancel')),
               ],
             ));
   }
